@@ -159,6 +159,53 @@ h2::after {
     max-width: 700px;
 }
 
+/* CV Download Section */
+.cv-download {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background-color: var(--very-light-green);
+    border-radius: 12px;
+    border: 2px solid var(--light-green);
+}
+
+.cv-download h3 {
+    font-size: 1.25rem;
+    color: var(--dark-bg);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.cv-btn:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.cv-btn svg {
+    flex-shrink: 0;
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
