@@ -1,6 +1,6 @@
 # Portfolio Personal
 
-🌐 **[Ver sitio en vivo](https://lopezromerogabriel.vercel.app/)**
+🌐 **[Ver portfolio](https://lopezromerogabriel.vercel.app/)**
 
 ## Descripción
 
