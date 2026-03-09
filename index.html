@@ -84,7 +84,52 @@
 
         <section class="projects" id="proyectos">
             <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
-            <div class="projects-grid">
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" aria-label="Previous project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="projects-carousel">
+                    <div class="projects-grid">
+                
+                <div class="project-card">
+                    
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fviso.ai%2Fwp-content%2Fuploads%2F2021%2F03%2Fdeep-convolutional-network-for-face-detection.jpg&f=1&nofb=1&ipt=6010e44b2955ec7f35c9463f9e0b0b314e0c0dda7a67777153cf9cba0e7a6aae" alt="PicVault Project">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-es="PicVault" data-en="PicVault">PicVault</h3>
+                        <p data-es="Un servicio de gestión y distribución de imágenes para fotógrafos de eventos. Permite a los asistentes encontrar y reclamar sus fotos al instante dentro de galerías masivas utilizando reconocimiento facial." data-en="An intelligent image management and delivery service for event photographers. It allows attendees to instantly find and claim their photos from large event galleries using facial recognition.">Un servicio de gestión y distribución de imágenes para fotógrafos de eventos. Permite a los asistentes encontrar y reclamar sus fotos al instante dentro de galerías masivas utilizando reconocimiento facial.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">Deep Learning</span>
+                            <span class="project-tag">Image Processing</span>
+                            <span class="project-tag">Django & DRF</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link disabled" data-es="Ver Demo" data-en="View Demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Ver Demo
+                            </a>
+                            <a href="https://github.com/gabichulas/picvault" target="_blank" class="project-link" data-es="Código" data-en="Code">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <span class="status-badge" data-es="En Desarrollo" data-en="In Development">En Desarrollo</span>
                     <div class="project-image">
@@ -157,7 +202,14 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <button class="carousel-btn carousel-next" aria-label="Next project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
+            <div class="carousel-indicators"></div>
         </section>
 
         <section class="experience" id="experiencia">
@@ -240,6 +292,11 @@
                         <!-- FastAPI logo -->
                         <img src="https://cdn.simpleicons.org/fastapi/ff8800" width="16" height="16" alt="FastAPI">
                         FastAPI
+                    </div>
+                    <div class="skill-tag">
+                        <!-- FastAPI logo -->
+                        <img src="https://cdn.simpleicons.org/django/ff8800" width="16" height="16" alt="Django">
+                        Django
                     </div>
                 </div>
             </div>
@@ -337,6 +394,119 @@
     </div>
 
     <script>
+        // Carousel functionality
+        const carousel = document.querySelector('.projects-grid');
+        const carouselContainer = document.querySelector('.projects-carousel');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const indicatorsContainer = document.querySelector('.carousel-indicators');
+        const cards = document.querySelectorAll('.project-card');
+        
+        let currentIndex = 0;
+        const cardsPerView = 1; // Always show 1 card
+        
+        function getTotalSlides() {
+            return cards.length;
+        }
+        
+        function createIndicators() {
+            indicatorsContainer.innerHTML = '';
+            const totalSlides = getTotalSlides();
+            
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('carousel-indicator');
+                if (i === currentIndex) indicator.classList.add('active');
+                indicator.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+        
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth;
+            const gap = parseFloat(getComputedStyle(carousel).gap);
+            const offset = -(currentIndex * (cardWidth + gap));
+            carousel.style.transform = `translateX(${offset}px)`;
+            
+            // Update buttons
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= getTotalSlides() - 1;
+            
+            // Update indicators
+            document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        function goToSlide(index) {
+            currentIndex = Math.max(0, Math.min(index, getTotalSlides() - 1));
+            updateCarousel();
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < getTotalSlides() - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            }
+        });
+        
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentIndex < getTotalSlides() - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                } else if (diff < 0 && currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+        }
+        
+        // Handle resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCarousel();
+            }, 250);
+        });
+        
+        // Initialize
+        createIndicators();
+        updateCarousel();
+        
         // Language Switcher
         const langButtons = document.querySelectorAll('.lang-btn');
         const elementsWithLang = document.querySelectorAll('[data-es][data-en]');
