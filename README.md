@@ -4,7 +4,7 @@
 
 ## Descripción
 
-Sitio web personal que presenta mi experiencia profesional, proyectos y habilidades técnicas en Data Science y Machine Learning.
+Sitio web personal que presenta mi experiencia profesional, proyectos y habilidades técnicas en DevOps Engineering.
 
 ## Contenido
 
